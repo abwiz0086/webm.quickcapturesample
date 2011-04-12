@@ -1,0 +1,49 @@
+Quick Capture Sample Application
+Author: sgammon@google.com (Stacey Gammon)
+
+Captures streaming video and outputs to a sample webm file.
+
+Building with Eclipse (Unix/Mac)
+
+1) Open eclipse (must have c/c++ framework installed).
+2) Select Import -> General -> Existing Projects into Workspace
+3) Browse to where you downloaded the quickcapturesample folder & select it as
+   the root.
+4) (Mac Only) Copy maclibs/libvidcap.1.dylib into /usr/local/lib/
+5) Build using configuration UnixDebug or MacDebug, depending on your OS.
+
+Building with Visual Studio 2008 (Windows)
+
+1) Open up Win/QuickCapture.sln
+2) Must have DirectShow SDK Installed.
+3) Build Solution.
+
+The appropriate libraries for vpx and webmmux are included, but you can also
+link to newer versions as they become available.
+
+Running:
+
+Windows: Win/Debug/quickcapture.exe
+Linux:   UnixDebug/QuickCaptureSample
+Mac:     MacDebug/QuickCaptureSample
+
+Output file: sample.webm (in the same folder you ran the program in).
+
+To play the output file, use Windows Media Player, or point to the file in a
+Chrome of Firefox browser.
+
+Notes:
+
+- You can adjust the width and height, but not all values will neccesarily work.
+  Default value of width at 640 and height at 480 works on all platforms.
+
+- You can also adjust the video bitrate, and the capture frame rate.
+
+- If you run into problems, try downloading and building the latest libraries
+  (libvpx, webmmux, etc) for your specific platform.
+
+TODO:
+ - Use gyp files to create .sln and eclipse project files.
+ - Fix timing bug on linux in V4L2.
+ - Take file output name as an input parameter.
+ - Create makefiles to allow building from command line

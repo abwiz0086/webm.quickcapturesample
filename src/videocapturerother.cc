@@ -118,11 +118,6 @@ bool VideoCapturerOther::BufferHasFrame() {
                               raw_->d_w, raw_->d_h);
   }
 
-  // A temporary and very hacky way of getting around a bug where
-  // ioctl(fd_, VIDIOC_QBUF, &buf) randomly returns error EINVAL.
-  // TODO: fix
-  usleep(100000);
-
   MaybeCleanUpAndFail(ioctl(fd_, VIDIOC_QBUF, &buf) < 0,
                       "Failed putting buffer back");
 

@@ -87,7 +87,7 @@ void VideoCapturer::FailOnNegative(int result, string message) {
 void VideoCapturer::MaybeCleanUpAndFail(bool should_fail,
                                         string error_message) {
   if (should_fail) {
-    LOG("Failed while %s and error code '%d'", error_message.c_str(), errno);
+    LOG("ERROR: '%s', Error code '%d'", error_message.c_str(), errno);
     CleanUp();
     exit(EXIT_FAILURE);
   }

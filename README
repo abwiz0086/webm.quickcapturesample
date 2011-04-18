@@ -44,6 +44,5 @@ Notes:
 
 TODO:
  - Use gyp files to create .sln and eclipse project files.
- - Fix timing bug on linux in V4L2.
  - Take file output name as an input parameter.
  - Create makefiles to allow building from command line
